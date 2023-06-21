@@ -16,8 +16,9 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const { username, password } = req.body;
 
-    const query = `SELECT * FROM usuario WHERE nombre_usuario = ${username}
-    AND contraseña = ${password}`;
+    console.log(username, password);
+
+    const query = `SELECT * FROM usuario WHERE nombre_usuario = '${username}' AND contraseña = '${password}'`;
 
     connection.query(query, (err, results) => {
         if (err) {

@@ -4,6 +4,7 @@ const db = require('./db');
 const port = 3000;
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 db.connect(err => {
     if (err) {
